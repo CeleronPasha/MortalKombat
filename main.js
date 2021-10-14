@@ -20,15 +20,18 @@ const player2 = {
 }
 
 // Task #1 //
+const $arenas = document.querySelector('.arenas')
+
 function createPlayer(player, name, hp, heroImage){
   const $player = document.createElement('div')
-  $player.classList.add(player);
   const $progressbar = document.createElement('div');
   const $character = document.createElement('div');
   const $life = document.createElement('div');
   const $name = document.createElement('div');
   const $img = document.createElement('img');
+  
 
+  $player.classList.add(player);
   $progressbar.classList.add('progressbar');
   $character.classList.add('character')
   $life.style.width = hp + '%';
@@ -37,15 +40,13 @@ function createPlayer(player, name, hp, heroImage){
   $name.innerText = name;
   $img.src = heroImage;
 
+  $arenas.appendChild($player)
   $player.appendChild($progressbar);
   $player.appendChild($character);
-
   $progressbar.appendChild($life);
   $progressbar.appendChild($name);
   $character.appendChild($img);
 
-  const $arenas = document.querySelector('.arenas')
-  $arenas.appendChild($player)
 }
 
 // Task #2 //
